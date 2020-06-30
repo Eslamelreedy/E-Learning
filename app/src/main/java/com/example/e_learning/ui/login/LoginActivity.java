@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         if (SharedPrefManger.getINSTANCE(this).isLoggedIn())
         {
-            //eslam el marg
 
             Intent intent = new Intent(LoginActivity.this,AnnouncementFragment.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
