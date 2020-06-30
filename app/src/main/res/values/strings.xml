@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">E-Learning</string>
+    <string name="appname">EASY LEARN</string>
+    <string name="Hello_LoginScreen">Hello</string>
+    <string name="Please_login">Please login to your account.</string>
+    <string name="EmailAddress">Email Address</string>
+    <string name="password">Password</string>
+    <string name="enter_your_id">Enter Your ID</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="login">LOGIN</string>
+    <string name="doctor_login">Doctor Login</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="register_now">Register Now</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="logobook">logobook</string>
+    <string name="name">Name</string>
+    <string name="confirmpassword">ConfirmPassword</string>
+    <string name="student_id">Student ID</string>
+    <string name="level">Level</string>
+
+
+    <string name="drawerOpen">drawerOpen</string>
+    <string name="drawerClose">drawerClose</string>
+    <string name="Your_Courses">Your Courses</string>
+
+    <string name="book_description">Description</string>
+    <string name="course_content_image">course content image</string>
+    <string name="blabla">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="book_blabla">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="book_name">Book</string>
+    <string name="download_book">Download Book</string>
+    <string name="lecture_name">Lecture</string>
+    <string name="x">x</string>
+    <string name="submit">Submit </string>
+    <string name="ask_question">Ask Question</string>
+    <string name="lecListTitle">Lectures</string>
+    <string name="assignment">Assignment</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="past">  PAST  </string>
+    <string name="deadline">Deadline</string>
+    <string name="operating_system">Operating System</string>
+    <string name="date">29/2/2020</string>
+    <string name="sheet_x">Sheet X</string>
+    <string name="upladed_dd_mm_yyyy">Uploaded: DD/MM/YYYY</string>
+    <string name="deliverd">Delivered</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chapter_x">Chapter x</string>
+    <string name="slide_x">Slide x</string>
+    <string name="edit">Edit</string>
+    <string name="questions">Questions</string>
+    <string name="sent">Sent</string>
+    <string name="answered">Answered</string>
+    <string name="view_questions">View Questions</string>
+    <string name="delete">delete</string>
+    <string name="student_name">Student Name</string>
+    <string name="question_title">Question Title</string>
+    <string name="announcement">Announcement</string>
+    <string name="year">Year</string>
+    <string name="department">Department</string>
+    <string name="section">Section</string>
+    <string name="upload_assignment">Upload Assignment</string>
+    <string name="your_assignment_here">Your Assignment here</string>
+    <string name="upload_lecture">Upload Lecture</string>
+    <string name="chapter_one_risk_analysis">Chapter One - Risk Analysis</string>
+    <string name="url_title">URL Title</string>
+    <string name="ask_your_question">Ask Your Question</string>
+    <string name="topic">Topic</string>
+    <string name="your_topic_name">Your Topic Name</string>
+    <string name="question">Question</string>
+    <string name="please_select_courses">Please Select Courses</string>
+</resources>
