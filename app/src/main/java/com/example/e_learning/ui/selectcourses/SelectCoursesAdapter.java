@@ -37,7 +37,7 @@ public class SelectCoursesAdapter extends RecyclerView.Adapter<SelectCoursesAdap
 
 
         holder.courseName.setText(coursesModels.get(position).getName());
-        holder.courseLvl.setText(coursesModels.get(position).getLevel());
+        holder.courseLvl.setText("Level "+coursesModels.get(position).getLevel());
         holder.checkBox.setChecked(coursesModels.get(position).isSelected());
         holder.setOnItemClickListener((v, position1) -> {
             CheckBox checkBox = (CheckBox) v;

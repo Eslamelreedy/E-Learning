@@ -29,15 +29,26 @@ public class SelectCourses extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_courses);
 
+
+
         viewModel= new ViewModelProvider(this).get(SelectCoursesViewModel.class);
         //RecyclerView
         SelectCoursesAdapter adapter = new SelectCoursesAdapter();
         recyclerView = findViewById(R.id.RecyclerSelectCourses);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+        viewModel.getAllCourses();
 
         viewModel.coursesModelMutableLiveData.observe(this, allCoursesModel -> {
-            adapter.setList((ArrayList<AllCoursesData>) allCoursesModel.getData());
+            if (allCoursesModel.getStatus())
+            {
+                Toast.makeText(this, "Data Arrived", Toast.LENGTH_SHORT).show();
+                adapter.setList((ArrayList<AllCoursesData>) allCoursesModel.getData());
+            }
+            else
+            {
+                Toast.makeText(this, allCoursesModel.getError(), Toast.LENGTH_SHORT).show();
+            }
 
 
         });
