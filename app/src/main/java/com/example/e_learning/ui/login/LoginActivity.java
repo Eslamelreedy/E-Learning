@@ -15,6 +15,7 @@ import com.example.e_learning.R;
 import com.example.e_learning.databinding.ActivityLoginBinding;
 import com.example.e_learning.pojo.StudentModel;
 import com.example.e_learning.storage.SharedPrefManger;
+import com.example.e_learning.ui.drawer.Drawer;
 import com.example.e_learning.ui.fragments.Announcement.AnnouncementFragment;
 import com.example.e_learning.ui.registration.RegistrationActivity;
 import com.example.e_learning.ui.registration.StudentViewModel;
@@ -34,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         if (SharedPrefManger.getINSTANCE(this).isLoggedIn())
         {
 
-            Intent intent = new Intent(LoginActivity.this,AnnouncementFragment.class);
+            Intent intent = new Intent(LoginActivity.this, Drawer.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 
@@ -78,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "success", Toast.LENGTH_SHORT).show();
                 SharedPrefManger.getINSTANCE(LoginActivity.this).saveUser(studentModel.getStudentData());
 
-                Intent intent = new Intent(LoginActivity.this,AnnouncementFragment.class);
+                Intent intent = new Intent(LoginActivity.this,Drawer.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
 

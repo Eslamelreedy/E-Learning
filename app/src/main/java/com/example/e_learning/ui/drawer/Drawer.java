@@ -1,6 +1,7 @@
 package com.example.e_learning.ui.drawer;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -13,12 +14,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.e_learning.R;
+import com.example.e_learning.storage.SharedPrefManger;
 import com.example.e_learning.ui.fragments.Announcement.AnnouncementFragment;
 import com.example.e_learning.ui.fragments.Assginments.AssignmentFragment;
 import com.example.e_learning.ui.fragments.Courses.CoursesFragment;
 import com.example.e_learning.ui.fragments.LogoutFragment;
 import com.example.e_learning.ui.fragments.Questions.QuestionsFragment;
 import com.example.e_learning.ui.fragments.SettingFragment;
+import com.example.e_learning.ui.login.LoginActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -88,10 +91,10 @@ public class Drawer extends AppCompatActivity implements NavigationView.OnNaviga
             fragmentTransaction.replace(R.id.rel_layout, fragment, "Setting");
             fragmentTransaction.commit();
         } else if (id == R.id.logout) {
-            LogoutFragment fragment = new LogoutFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.rel_layout, fragment, "Logout");
-            fragmentTransaction.commit();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            SharedPrefManger.getINSTANCE(this).clear();
+
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
