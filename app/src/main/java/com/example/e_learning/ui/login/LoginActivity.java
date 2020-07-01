@@ -32,11 +32,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (SharedPrefManger.getINSTANCE(this).isLoggedIn())
-        {
+        if (SharedPrefManger.getINSTANCE(this).isLoggedIn()) {
 
             Intent intent = new Intent(LoginActivity.this, Drawer.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 
         }
@@ -45,8 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
 
         loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
@@ -79,19 +76,23 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "success", Toast.LENGTH_SHORT).show();
                 SharedPrefManger.getINSTANCE(LoginActivity.this).saveUser(studentModel.getStudentData());
 
-                Intent intent = new Intent(LoginActivity.this,Drawer.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Intent intent = new Intent(LoginActivity.this, Drawer.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
 
-            }
-            else
-            {
-                Toast.makeText(LoginActivity.this, "Failed.."+ studentModel.getError(), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(LoginActivity.this, "Failed.." + studentModel.getError(), Toast.LENGTH_SHORT).show();
 
             }
         });
 
+        binding.regText.setOnClickListener(v ->{
+            Intent intent = new Intent(this,RegistrationActivity.class);
+            startActivity(intent);
+        });
+
     }
+
 
 
 }

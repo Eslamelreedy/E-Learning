@@ -1,5 +1,6 @@
 package com.example.e_learning.data;
 
+import com.example.e_learning.pojo.AllCoursesModel;
 import com.example.e_learning.pojo.StudentModel;
 import com.example.e_learning.ui.login.LoginInformation;
 import com.example.e_learning.ui.registration.RegisterUserInformation;
@@ -14,5 +15,8 @@ public interface ApiInterface {
 
     @POST("login")
     public Call<StudentModel> LoginMethod (@Body LoginInformation loginInformation);
+    @POST("allCourses")
+    public Call<AllCoursesModel> getAllCourses();
+
 
 }

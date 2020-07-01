@@ -1,5 +1,6 @@
 package com.example.e_learning.data;
 
+import com.example.e_learning.pojo.AllCoursesModel;
 import com.example.e_learning.pojo.StudentModel;
 import com.example.e_learning.ui.login.LoginInformation;
 import com.example.e_learning.ui.registration.RegisterUserInformation;
@@ -38,5 +39,10 @@ public class StudentClient {
     public Call<StudentModel> LoginUser (LoginInformation loginInformation)
     {
         return apiInterface.LoginMethod(loginInformation);
+    }
+
+    public Call<AllCoursesModel> getAllCourses ()
+    {
+        return apiInterface.getAllCourses();
     }
 }

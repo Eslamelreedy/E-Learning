@@ -18,7 +18,6 @@ import com.example.e_learning.storage.SharedPrefManger;
 import com.example.e_learning.ui.fragments.Announcement.AnnouncementFragment;
 import com.example.e_learning.ui.fragments.Assginments.AssignmentFragment;
 import com.example.e_learning.ui.fragments.Courses.CoursesFragment;
-import com.example.e_learning.ui.fragments.LogoutFragment;
 import com.example.e_learning.ui.fragments.Questions.QuestionsFragment;
 import com.example.e_learning.ui.fragments.SettingFragment;
 import com.example.e_learning.ui.login.LoginActivity;
