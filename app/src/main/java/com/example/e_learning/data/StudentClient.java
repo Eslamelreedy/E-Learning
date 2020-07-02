@@ -1,13 +1,17 @@
 package com.example.e_learning.data;
 
+import com.example.e_learning.pojo.AddCourseResModel;
 import com.example.e_learning.pojo.AllCoursesModel;
 import com.example.e_learning.pojo.StudentModel;
 import com.example.e_learning.ui.login.LoginInformation;
 import com.example.e_learning.ui.registration.RegisterUserInformation;
 
+import java.util.HashMap;
+
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 
 public class StudentClient {
 
@@ -44,5 +48,9 @@ public class StudentClient {
     public Call<AllCoursesModel> getAllCourses ()
     {
         return apiInterface.getAllCourses();
+    }
+    public Call<AddCourseResModel> getResponseAddCourse (HashMap<Object,Object> map)
+    {
+        return apiInterface.getResponseAddCourse(map);
     }
 }

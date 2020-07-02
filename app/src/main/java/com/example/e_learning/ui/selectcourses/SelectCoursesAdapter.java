@@ -3,7 +3,7 @@ package com.example.e_learning.ui.selectcourses;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,15 +19,26 @@ public class SelectCoursesAdapter extends RecyclerView.Adapter<SelectCoursesAdap
 
     private ArrayList<AllCoursesData> coursesModels = new ArrayList<>();
     private ArrayList<AllCoursesData> Selected = new ArrayList<>();
+    private ItemClickListener listener;
 
 
+    public interface ItemClickListener {
+        void OnItemClick(int position);
 
+        void OnAddCourseClick(int position);
+
+    }
+
+    void setOnItemClickListener(ItemClickListener ic) {
+        listener = ic;
+
+    }
 
     @NonNull
     @Override
     public SelectCoursesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.select_courses_row_list, parent, false);
-        SelectCoursesViewHolder holder = new SelectCoursesViewHolder(view);
+        SelectCoursesViewHolder holder = new SelectCoursesViewHolder(view, listener);
         return holder;
 
     }
@@ -37,19 +48,7 @@ public class SelectCoursesAdapter extends RecyclerView.Adapter<SelectCoursesAdap
 
 
         holder.courseName.setText(coursesModels.get(position).getName());
-        holder.courseLvl.setText("Level "+coursesModels.get(position).getLevel());
-        holder.checkBox.setChecked(coursesModels.get(position).isSelected());
-        holder.setOnItemClickListener((v, position1) -> {
-            CheckBox checkBox = (CheckBox) v;
-
-            if (checkBox.isChecked()) {
-                Selected.add(coursesModels.get(position));
-            } else {
-                Selected.remove(coursesModels.get(position));
-
-            }
-
-        });
+        holder.courseLvl.setText("Level " + coursesModels.get(position).getLevel());
 
 
     }
@@ -63,39 +62,43 @@ public class SelectCoursesAdapter extends RecyclerView.Adapter<SelectCoursesAdap
         return coursesModels.size();
     }
 
-    public void setList(ArrayList<AllCoursesData> list)
-    {
-        this.coursesModels = list ;
+    public void setList(ArrayList<AllCoursesData> list) {
+        this.coursesModels = list;
         notifyDataSetChanged();
     }
 
-    static class SelectCoursesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class SelectCoursesViewHolder extends RecyclerView.ViewHolder {
 
         TextView courseName;
         TextView courseLvl;
-        CheckBox checkBox;
-
-        ItemClickListener listener;
+        Button addCourse;
 
 
-        public SelectCoursesViewHolder(@NonNull View itemView) {
+        public SelectCoursesViewHolder(@NonNull View itemView, ItemClickListener listener) {
             super(itemView);
 
 
             courseName = itemView.findViewById(R.id.courseName);
             courseLvl = itemView.findViewById(R.id.courseLvl);
-            checkBox = itemView.findViewById(R.id.checkBox);
-            checkBox.setOnClickListener(this);
+            addCourse = itemView.findViewById(R.id.addCourseBtn);
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.OnItemClick(position);
+                    }
+                }
+            });
+            addCourse.setOnClickListener(v -> {
+                if (listener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.OnAddCourseClick(position);
+                    }
+                }
+            });
 
-        }
 
-        public void setOnItemClickListener(ItemClickListener ic) {
-            this.listener = ic;
-        }
-
-        @Override
-        public void onClick(View v) {
-            this.listener.OnItemClick(v, getLayoutPosition());
         }
     }
 }
