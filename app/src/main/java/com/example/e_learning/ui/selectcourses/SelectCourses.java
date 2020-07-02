@@ -38,6 +38,7 @@ public class SelectCourses extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SelectCoursesViewModel.class);
         //RecyclerView
         SelectCoursesAdapter adapter = new SelectCoursesAdapter();
+        //this is comment test
 
         coursesBinding.RecyclerSelectCourses.setLayoutManager(new LinearLayoutManager(this));
         coursesBinding.RecyclerSelectCourses.setAdapter(adapter);
