@@ -13,10 +13,10 @@ import retrofit2.Response;
 public class AnnouncementsViewModel extends ViewModel {
 
     MutableLiveData<AnnouncementsModel> announcementsModelMutableLiveData = new MutableLiveData<>();
-    private MutableLiveData<Integer> studentId ;
-     MutableLiveData<String> error = new MutableLiveData<>();
-    MutableLiveData<Integer> getStudentId() {
+    MutableLiveData<String> error = new MutableLiveData<>();
+    private MutableLiveData<Integer> studentId;
 
+    MutableLiveData<Integer> getStudentId() {
         if (studentId == null) {
             studentId = new MutableLiveData<>();
         }
@@ -25,16 +25,13 @@ public class AnnouncementsViewModel extends ViewModel {
     }
 
     MutableLiveData<AnnouncementsModel> getResponse() {
-
         if (announcementsModelMutableLiveData == null) {
             announcementsModelMutableLiveData = new MutableLiveData<>();
         }
         return announcementsModelMutableLiveData;
-
     }
 
-    void getAnnouncements()
-    {
+    void getAnnouncements() {
         StudentClient.getINSTANCE().getAnnouncements(studentId.getValue()).enqueue(new Callback<AnnouncementsModel>() {
             @Override
             public void onResponse(Call<AnnouncementsModel> call, Response<AnnouncementsModel> response) {
