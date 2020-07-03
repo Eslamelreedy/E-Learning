@@ -62,7 +62,7 @@ public class SelectCoursesAdapter extends RecyclerView.Adapter<SelectCoursesAdap
         return coursesModels.size();
     }
 
-    public void setList(ArrayList<AllCoursesData> list) {
+    void setList(ArrayList<AllCoursesData> list) {
         this.coursesModels = list;
         notifyDataSetChanged();
     }

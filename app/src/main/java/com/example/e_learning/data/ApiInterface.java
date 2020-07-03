@@ -2,6 +2,7 @@ package com.example.e_learning.data;
 
 import com.example.e_learning.pojo.AddCourseResModel;
 import com.example.e_learning.pojo.AllCoursesModel;
+import com.example.e_learning.pojo.AnnouncementsModel;
 import com.example.e_learning.pojo.StudentModel;
 import com.example.e_learning.ui.login.LoginInformation;
 import com.example.e_learning.ui.registration.RegisterUserInformation;
@@ -22,5 +23,7 @@ public interface ApiInterface {
     public Call<AllCoursesModel> getAllCourses();
     @POST("addCourse")
     public Call<AddCourseResModel> getResponseAddCourse (@Body HashMap<Object,Object> map);
+    @POST("viewPosts")
+    public Call<AnnouncementsModel> getAnnouncements (@Body Integer integer);
 
 }

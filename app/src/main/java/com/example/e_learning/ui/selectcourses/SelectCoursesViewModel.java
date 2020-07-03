@@ -33,8 +33,6 @@ public class SelectCoursesViewModel extends ViewModel {
     }
 
 
-
-
     MutableLiveData<AllCoursesModel> getResponse() {
 
         if (coursesModelMutableLiveData == null) {
@@ -54,9 +52,6 @@ public class SelectCoursesViewModel extends ViewModel {
     }
 
 
-
-
-
     void getAllCourses() {
         StudentClient.getINSTANCE().getAllCourses().enqueue(new Callback<AllCoursesModel>() {
             @Override
@@ -71,7 +66,7 @@ public class SelectCoursesViewModel extends ViewModel {
         });
     }
 
-    public void addCourse() {
+    void addCourse() {
         StudentClient.getINSTANCE().getResponseAddCourse(mapMutableLiveData.getValue()).enqueue(new Callback<AddCourseResModel>() {
             @Override
             public void onResponse(Call<AddCourseResModel> call, Response<AddCourseResModel> response) {

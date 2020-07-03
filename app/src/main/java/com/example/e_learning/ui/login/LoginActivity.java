@@ -8,17 +8,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.e_learning.R;
 import com.example.e_learning.databinding.ActivityLoginBinding;
-import com.example.e_learning.pojo.StudentModel;
 import com.example.e_learning.storage.SharedPrefManger;
 import com.example.e_learning.ui.drawer.Drawer;
-import com.example.e_learning.ui.fragments.Announcement.AnnouncementFragment;
 import com.example.e_learning.ui.registration.RegistrationActivity;
-import com.example.e_learning.ui.registration.StudentViewModel;
 
 import java.util.Objects;
 

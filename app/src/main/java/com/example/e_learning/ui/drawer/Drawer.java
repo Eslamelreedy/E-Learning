@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.e_learning.R;
 import com.example.e_learning.storage.SharedPrefManger;
-import com.example.e_learning.ui.fragments.Announcement.AnnouncementFragment;
+import com.example.e_learning.ui.fragments.announcement.AnnouncementFragment;
 import com.example.e_learning.ui.fragments.Assginments.AssignmentFragment;
 import com.example.e_learning.ui.fragments.Courses.CoursesFragment;
 import com.example.e_learning.ui.fragments.Questions.QuestionsFragment;
