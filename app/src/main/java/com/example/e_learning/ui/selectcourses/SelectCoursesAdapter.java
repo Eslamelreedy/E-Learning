@@ -53,9 +53,6 @@ public class SelectCoursesAdapter extends RecyclerView.Adapter<SelectCoursesAdap
 
     }
 
-    public ArrayList<AllCoursesData> getSelected() {
-        return Selected;
-    }
 
     @Override
     public int getItemCount() {

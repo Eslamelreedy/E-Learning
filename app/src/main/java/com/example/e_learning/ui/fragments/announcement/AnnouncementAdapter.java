@@ -1,5 +1,6 @@
 package com.example.e_learning.ui.fragments.announcement;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
 
 
 
-    private ArrayList<AnnouncementsData> AnnouncementArrayList;
+    private ArrayList<AnnouncementsData> AnnouncementArrayList = new ArrayList<>();
 
     void setList(ArrayList<AnnouncementsData> list) {
         this.AnnouncementArrayList = list;
@@ -32,9 +33,10 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
         return new AnnouncementViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.announcement_listrow, parent, false));
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull AnnouncementViewHolder holder, int position) {
-        holder.announcementNo.setText(AnnouncementArrayList.get(position).getId());
+        holder.announcementNo.setText(AnnouncementArrayList.get(position).getId().toString());
         holder.subject.setText(AnnouncementArrayList.get(position).getDescription());
 
     }

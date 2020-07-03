@@ -14,13 +14,22 @@ public class AnnouncementsViewModel extends ViewModel {
 
     MutableLiveData<AnnouncementsModel> announcementsModelMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<Integer> studentId ;
-
+     MutableLiveData<String> error = new MutableLiveData<>();
     MutableLiveData<Integer> getStudentId() {
 
         if (studentId == null) {
             studentId = new MutableLiveData<>();
         }
         return studentId;
+
+    }
+
+    MutableLiveData<AnnouncementsModel> getResponse() {
+
+        if (announcementsModelMutableLiveData == null) {
+            announcementsModelMutableLiveData = new MutableLiveData<>();
+        }
+        return announcementsModelMutableLiveData;
 
     }
 
