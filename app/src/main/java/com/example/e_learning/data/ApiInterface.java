@@ -17,17 +17,27 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
     @POST("register")
-    public Call<StudentModel> RegisterMethod (@Body RegisterUserInformation registerUserInformation);
+    Call<StudentModel> RegisterMethod(@Body RegisterUserInformation registerUserInformation);
 
     @POST("login")
-    public Call<StudentModel> LoginMethod (@Body LoginInformation loginInformation);
+    Call<StudentModel> LoginMethod(@Body LoginInformation loginInformation);
+
     @POST("allCourses")
-    public Call<AllCoursesModel> getAllCourses();
+    Call<AllCoursesModel> getAllCourses();
+
     @POST("addCourse")
+<<<<<<< HEAD
     public Call<AddCourseResModel> getResponseAddCourse (@Body HashMap<Object,Object> map);
 
     @POST("viewPosts")
     @FormUrlEncoded
     public Call<AnnouncementsModel> getAnnouncements (@Field("studentId") Integer studentId);
+=======
+    Call<AddCourseResModel> getResponseAddCourse(@Body HashMap<Object, Object> map);
+
+    @POST("viewPosts")
+    @FormUrlEncoded
+    Call<AnnouncementsModel> getAnnouncements(@Field("studentId") Integer studentId);
+>>>>>>> origin/develop
 
 }

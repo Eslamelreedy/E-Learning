@@ -1,9 +1,5 @@
 package com.example.e_learning.ui.fragments.Courses;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,13 +11,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.e_learning.R;
 
 public class CourseContent extends AppCompatActivity {
 
     ListView listView;
-    String Lectures []  = {"Lecture","Lecture","Lecture","Lecture","Lecture"};
-    String Number []  = {"1","2","3","4","5"};
+    String[] Lectures = {"Lecture", "Lecture", "Lecture", "Lecture", "Lecture"};
+    String[] Number = {"1", "2", "3", "4", "5"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,25 +61,28 @@ public class CourseContent extends AppCompatActivity {
 
 
     }
+
     class AdapterForLecture extends ArrayAdapter<String> {
         Context context;
         String[] lecture;
         String[] num;
-        AdapterForLecture(Context c, String L [] , String N [] ){
-            super(c,R.layout.leclist, R.id.TextView1,L);
-            this.context=c;
-            this.lecture=L;
+
+        AdapterForLecture(Context c, String[] L, String[] N) {
+            super(c, R.layout.leclist, R.id.TextView1, L);
+            this.context = c;
+            this.lecture = L;
             this.num = N;
 
         }
+
         //tany step
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            View rows = layoutInflater.inflate(R.layout.leclist,parent,false);
+            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View rows = layoutInflater.inflate(R.layout.leclist, parent, false);
             TextView lecs = rows.findViewById(R.id.TextView1);
-            TextView nums= rows.findViewById(R.id.number1);
+            TextView nums = rows.findViewById(R.id.number1);
             lecs.setText(lecture[position]);
             nums.setText(num[position]);
             return rows;
