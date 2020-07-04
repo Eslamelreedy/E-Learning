@@ -11,6 +11,8 @@ import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
@@ -23,7 +25,9 @@ public interface ApiInterface {
     public Call<AllCoursesModel> getAllCourses();
     @POST("addCourse")
     public Call<AddCourseResModel> getResponseAddCourse (@Body HashMap<Object,Object> map);
+
     @POST("viewPosts")
-    public Call<AnnouncementsModel> getAnnouncements (@Body Integer integer);
+    @FormUrlEncoded
+    public Call<AnnouncementsModel> getAnnouncements (@Field("studentId") Integer studentId);
 
 }
