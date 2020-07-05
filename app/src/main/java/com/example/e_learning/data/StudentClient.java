@@ -27,7 +27,7 @@ public class StudentClient {
     private Long READ_TIMEOUT = 60L; // in secs
 
     public StudentClient() {
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new ChuckInterceptor(MyApplication.instance))
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new ChuckInterceptor(Myapplication.instance))
                 .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(READ_TIMEOUT, TimeUnit.SECONDS)

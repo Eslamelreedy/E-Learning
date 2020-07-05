@@ -12,15 +12,10 @@ import retrofit2.Response;
 
 public class AnnouncementsViewModel extends ViewModel {
 
-<<<<<<< HEAD
-    private MutableLiveData<AnnouncementsModel> announcementsModelMutableLiveData = new MutableLiveData<>();
-    private MutableLiveData<Integer> studentId ;
-    MutableLiveData<Integer> setStudentId() {
-=======
+
     MutableLiveData<AnnouncementsModel> announcementsModelMutableLiveData = new MutableLiveData<>();
     MutableLiveData<String> error = new MutableLiveData<>();
     private MutableLiveData<Integer> studentId;
->>>>>>> origin/develop
 
     MutableLiveData<Integer> getStudentId() {
         if (studentId == null) {

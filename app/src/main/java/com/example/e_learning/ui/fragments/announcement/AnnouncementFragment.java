@@ -39,31 +39,20 @@ public class AnnouncementFragment extends Fragment {
         AnnouncementAdapter announcementAdapter = new AnnouncementAdapter();
         binding.announcementRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.announcementRecycler.setAdapter(announcementAdapter);
-<<<<<<< HEAD
 
-        announcementsViewModel.setStudentId().setValue(SharedPrefManger.getINSTANCE(getActivity()).getUser().getId());
-=======
         announcementsViewModel = new ViewModelProvider(requireActivity()).get(AnnouncementsViewModel.class);
         announcementsViewModel.getStudentId().setValue(SharedPrefManger.getINSTANCE(getActivity()).getUser().getId());
->>>>>>> origin/develop
         announcementsViewModel.getAnnouncements();
         announcementsViewModel.getResponse().observe(getViewLifecycleOwner(), announcementsModel -> {
 
             if (announcementsModel.getStatus()) {
-<<<<<<< HEAD
-                if (announcementsModel.getData() != null)
-                {
-=======
+
                 if (announcementsModel.getData() != null) {
->>>>>>> origin/develop
                     announcementAdapter.setList((ArrayList<AnnouncementsData>) announcementsModel.getData());
                 } else
                     Toast.makeText(getActivity(), "no data ", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-=======
 
 
->>>>>>> origin/develop
             } else if (!announcementsModel.getStatus()) {
                 Toast.makeText(getContext(), announcementsModel.getError(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(getActivity(), "false", Toast.LENGTH_SHORT).show();
@@ -72,13 +61,5 @@ public class AnnouncementFragment extends Fragment {
         });
         return view;
     }
-
-<<<<<<< HEAD
-=======
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
->>>>>>> origin/develop
 
 }
