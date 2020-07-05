@@ -1,5 +1,6 @@
 package com.example.e_learning.data;
 
+
 import com.example.e_learning.core.MyApplication;
 import com.example.e_learning.pojo.AddCourseResModel;
 import com.example.e_learning.pojo.AllCoursesModel;
@@ -27,7 +28,7 @@ public class StudentClient {
     private Long READ_TIMEOUT = 60L; // in secs
 
     public StudentClient() {
-        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new ChuckInterceptor(Myapplication.instance))
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(new ChuckInterceptor(new MyApplication().getInstance()))
                 .connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
