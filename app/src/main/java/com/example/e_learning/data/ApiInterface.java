@@ -26,10 +26,12 @@ public interface ApiInterface {
     Call<AllCoursesModel> getAllCourses();
 
     @POST("addCourse")
-    Call<AddCourseResModel> getResponseAddCourse(@Body HashMap<Object, Object> map);
+    public Call<AddCourseResModel> getResponseAddCourse (@Body HashMap<Object,Object> map);
 
     @POST("viewPosts")
     @FormUrlEncoded
-    Call<AnnouncementsModel> getAnnouncements(@Field("studentId") Integer studentId);
+    public Call<AnnouncementsModel> getAnnouncements (@Field("studentId") Integer studentId);
+
+
 
 }
